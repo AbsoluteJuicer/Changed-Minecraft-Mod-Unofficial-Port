@@ -10,8 +10,8 @@ import net.ltxprogrammer.changed.entity.variant.GenderedPair;
 import net.ltxprogrammer.changed.entity.variant.TransfurVariant;
 import net.minecraft.world.entity.monster.AbstractSkeleton;
 import net.minecraft.world.entity.monster.Creeper;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.neoforge.registries.DeferredRegister;
+import net.neoforged.neoforge.registries.RegistryObject;
 
 import java.util.ArrayList;
 import java.util.List;

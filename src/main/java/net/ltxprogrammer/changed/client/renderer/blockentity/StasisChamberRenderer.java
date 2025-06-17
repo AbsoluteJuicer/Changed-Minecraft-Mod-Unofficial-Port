@@ -19,7 +19,7 @@ import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.util.Mth;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.material.Fluids;
-import net.minecraftforge.client.ForgeHooksClient;
+import net.neoforged.client.ForgeHooksClient;
 
 import java.util.ArrayList;
 import java.util.List;

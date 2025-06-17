@@ -6,17 +6,18 @@ import net.ltxprogrammer.changed.data.RegistryElementPredicate;
 import net.ltxprogrammer.changed.entity.BasicPlayerInfo;
 import net.minecraft.core.Registry;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.NbtAccounter;
 import net.minecraft.nbt.NbtIo;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.common.ForgeConfigSpec;
-import net.minecraftforge.fml.ModLoadingContext;
-import net.minecraftforge.fml.config.ConfigTracker;
-import net.minecraftforge.fml.config.ModConfig;
-import net.minecraftforge.fml.loading.FMLPaths;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.ForgeRegistry;
-import net.minecraftforge.registries.GameData;
-import net.minecraftforge.server.ServerLifecycleHooks;
+import net.neoforged.neoforge.common.ModConfigSpec;
+import net.neoforged.fml.ModLoadingContext;
+import net.neoforged.fml.config.ConfigTracker;
+import net.neoforged.fml.config.ModConfig;
+import net.neoforged.fml.loading.FMLPaths;
+import net.neoforged.neoforge.registries.NeoForgeRegistries;
+import net.neoforged.neoforge.registries.ForgeRegistry;
+import net.neoforged.neoforge.registries.GameData;
+import net.neoforged.server.ServerLifecycleHooks;
 import org.apache.commons.lang3.tuple.Pair;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -39,11 +40,11 @@ public class ChangedConfig {
     static final Marker CONFIG = MarkerManager.getMarker("CONFIG");
 
     public static class Common {
-        public final ForgeConfigSpec.ConfigValue<Boolean> downloadPatreonContent;
-        public final ForgeConfigSpec.ConfigValue<String> githubDomain;
-        public final ForgeConfigSpec.ConfigValue<Boolean> displayPatronage;
+        public final ModConfigSpec.ConfigValue<Boolean> downloadPatreonContent;
+        public final ModConfigSpec.ConfigValue<String> githubDomain;
+        public final ModConfigSpec.ConfigValue<Boolean> displayPatronage;
 
-        public Common(ForgeConfigSpec.Builder builder) {
+        public Common(ModConfigSpec.Builder builder) {
             builder.comment("Choose whether this instance will download patreon content. If disabled: this instance will not recognize patrons' rank or special form.");
             downloadPatreonContent = builder.define("downloadPatreonContent", true);
             builder.comment("Choose your domain. Let's you specify a mirror domain if your ISP blocks github (for whatever reason).");
@@ -54,20 +55,20 @@ public class ChangedConfig {
     }
 
     public static class Client implements AdditionalData {
-        public final ForgeConfigSpec.ConfigValue<Boolean> showContentWarning;
-        public final ForgeConfigSpec.ConfigValue<Boolean> useGoopyInventory;
-        public final ForgeConfigSpec.ConfigValue<Boolean> useGoopyHearts;
-        public final ForgeConfigSpec.ConfigValue<Boolean> useBlinkingEyes;
-        public final ForgeConfigSpec.ConfigValue<Boolean> cacheGeneratedTextures;
-        public final ForgeConfigSpec.ConfigValue<Boolean> memCacheBaseImages;
-        public final ForgeConfigSpec.ConfigValue<Boolean> generateUniqueTexturesForAllBlocks;
-        public final ForgeConfigSpec.ConfigValue<Boolean> fastAndCheapLatexBlocks;
-        public final ForgeConfigSpec.ConfigValue<TransfurProgressOverlay.Position> transfurMeterPosition;
-        public final ForgeConfigSpec.ConfigValue<Boolean> renderDripParticlesWithNormal;
+        public final ModConfigSpec.ConfigValue<Boolean> showContentWarning;
+        public final ModConfigSpec.ConfigValue<Boolean> useGoopyInventory;
+        public final ModConfigSpec.ConfigValue<Boolean> useGoopyHearts;
+        public final ModConfigSpec.ConfigValue<Boolean> useBlinkingEyes;
+        public final ModConfigSpec.ConfigValue<Boolean> cacheGeneratedTextures;
+        public final ModConfigSpec.ConfigValue<Boolean> memCacheBaseImages;
+        public final ModConfigSpec.ConfigValue<Boolean> generateUniqueTexturesForAllBlocks;
+        public final ModConfigSpec.ConfigValue<Boolean> fastAndCheapLatexBlocks;
+        public final ModConfigSpec.ConfigValue<TransfurProgressOverlay.Position> transfurMeterPosition;
+        public final ModConfigSpec.ConfigValue<Boolean> renderDripParticlesWithNormal;
 
         public final BasicPlayerInfo basicPlayerInfo = new BasicPlayerInfo();
 
-        public Client(ForgeConfigSpec.Builder builder) {
+        public Client(ModConfigSpec.Builder builder) {
             builder.comment("Show content warning on launch (Disables automatically)");
             showContentWarning = builder.define("showContentWarning", true);
             builder.comment("Enable/disable the gooey inventory");
@@ -109,14 +110,14 @@ public class ChangedConfig {
     }
 
     public static class Server {
-        public final ForgeConfigSpec.ConfigValue<Boolean> showTFNametags;
-        public final ForgeConfigSpec.ConfigValue<List<? extends String>> blacklistCoverBlocks;
-        public final ForgeConfigSpec.ConfigValue<List<? extends String>> whitelistCoverBlocks;
-        public final ForgeConfigSpec.ConfigValue<Boolean> playerControllingAbilities;
-        public final ForgeConfigSpec.ConfigValue<Boolean> isGrabEnabled;
-        public final ForgeConfigSpec.ConfigValue<Double> bpiSizeTolerance;
+        public final ModConfigSpec.ConfigValue<Boolean> showTFNametags;
+        public final ModConfigSpec.ConfigValue<List<? extends String>> blacklistCoverBlocks;
+        public final ModConfigSpec.ConfigValue<List<? extends String>> whitelistCoverBlocks;
+        public final ModConfigSpec.ConfigValue<Boolean> playerControllingAbilities;
+        public final ModConfigSpec.ConfigValue<Boolean> isGrabEnabled;
+        public final ModConfigSpec.ConfigValue<Double> bpiSizeTolerance;
 
-        public Server(ForgeConfigSpec.Builder builder) {
+        public Server(ModConfigSpec.Builder builder) {
             builder.comment("Should transfurred players have a nametag");
             showTFNametags = builder.define("showTFNametags", true);
             builder.comment("Blacklist any blocks from being covered. Acceptable formats: \"@modid\", \"#tag\", \"modid:block_id\"");
@@ -132,11 +133,11 @@ public class ChangedConfig {
         }
 
         public Stream<RegistryElementPredicate<Block>> getBlacklistedCoverBlocks() {
-            return blacklistCoverBlocks.get().stream().map(s -> RegistryElementPredicate.parseString(ForgeRegistries.BLOCKS, s));
+            return blacklistCoverBlocks.get().stream().map(s -> RegistryElementPredicate.parseString(NeoForgeRegistries.BLOCKS, s));
         }
 
         public Stream<RegistryElementPredicate<Block>> getWhitelistedCoverBlocks() {
-            return whitelistCoverBlocks.get().stream().map(s -> RegistryElementPredicate.parseString(ForgeRegistries.BLOCKS, s));
+            return whitelistCoverBlocks.get().stream().map(s -> RegistryElementPredicate.parseString(NeoForgeRegistries.BLOCKS, s));
         }
 
         public boolean canBlockBeCovered(Block block) {
@@ -148,15 +149,15 @@ public class ChangedConfig {
         }
     }
 
-    private final Pair<Common, ForgeConfigSpec> commonPair;
-    private final Pair<Client, ForgeConfigSpec> clientPair;
-    private final Pair<Server, ForgeConfigSpec> serverPair;
+    private final Pair<Common, ModConfigSpec> commonPair;
+    private final Pair<Client, ModConfigSpec> clientPair;
+    private final Pair<Server, ModConfigSpec> serverPair;
     private final List<AdditionalData> additionalDataList = new ArrayList<>();
     public final Common common;
     public final Client client;
     public final Server server;
 
-    private static void earlyLoad(ModConfig.Type type, Pair<?, ForgeConfigSpec> specPair) {
+    private static void earlyLoad(ModConfig.Type type, Pair<?, ModConfigSpec> specPair) {
         for (var config : ConfigTracker.INSTANCE.configSets().get(type)) {
             if (config.getSpec() == specPair.getRight()) {
                 LOGGER.debug(CONFIG, "Early loading config file type {} at {} for {}", config.getType(), config.getFileName(), config.getModId());
@@ -173,7 +174,7 @@ public class ChangedConfig {
                 var tag = new CompoundTag();
                 data.save(tag);
                 path.getParent().toFile().mkdirs();
-                NbtIo.writeCompressed(tag, path.toFile());
+                NbtIo.writeCompressed(tag, path);
             } catch (IOException ex) {
                 Changed.LOGGER.error("Failed to write data for \"{}\"", data.getName());
                 ex.printStackTrace();
@@ -185,7 +186,7 @@ public class ChangedConfig {
         additionalDataList.forEach(data -> {
             var path = FMLPaths.CONFIGDIR.get().resolve(Changed.MODID).resolve(data.getName() + ".nbt");
             try {
-                var tag = NbtIo.readCompressed(path.toFile());
+                var tag = NbtIo.readCompressed(path, NbtAccounter.unlimitedHeap());
                 data.load(tag);
             } catch (IOException e) {
                 Changed.LOGGER.warn("Data file missing or corrupted for \"{}\", initializing on defaults", data.getName());
@@ -194,7 +195,7 @@ public class ChangedConfig {
                     var tag = new CompoundTag();
                     data.save(tag);
                     path.getParent().toFile().mkdirs();
-                    NbtIo.writeCompressed(tag, path.toFile());
+                    NbtIo.writeCompressed(tag, path);
                 } catch (IOException ex) {
                     Changed.LOGGER.error("Failed to write defaults for \"{}\"", data.getName());
                     ex.printStackTrace();
@@ -204,11 +205,11 @@ public class ChangedConfig {
     }
 
     public ChangedConfig(ModLoadingContext context) {
-        commonPair = new ForgeConfigSpec.Builder()
+        commonPair = new ModConfigSpec.Builder()
                 .configure(Common::new);
-        clientPair = new ForgeConfigSpec.Builder()
+        clientPair = new ModConfigSpec.Builder()
                 .configure(Client::new);
-        serverPair = new ForgeConfigSpec.Builder()
+        serverPair = new ModConfigSpec.Builder()
                 .configure(Server::new);
 
         additionalDataList.add(clientPair.getLeft());

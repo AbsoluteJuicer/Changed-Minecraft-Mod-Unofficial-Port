@@ -15,15 +15,15 @@ import net.minecraft.world.level.levelgen.feature.ConfiguredStructureFeature;
 import net.minecraft.world.level.levelgen.feature.StructureFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.neoforge.registries.DeferredRegister;
+import net.neoforged.neoforge.registries.NeoForgeRegistries;
+import net.neoforged.neoforge.registries.RegistryObject;
 
 import java.util.Objects;
 import java.util.function.Supplier;
 
 public class ChangedStructures {
-    public static final DeferredRegister<StructureFeature<?>> REGISTRY = DeferredRegister.create(ForgeRegistries.STRUCTURE_FEATURES, Changed.MODID);
+    public static final DeferredRegister<StructureFeature<?>> REGISTRY = DeferredRegister.create(NeoForgeRegistries.STRUCTURE_FEATURES, Changed.MODID);
     public static final DeferredRegister<ConfiguredStructureFeature<?, ?>> CONFIGURED_REGISTRY =
             DeferredRegister.create(BuiltinRegistries.CONFIGURED_STRUCTURE_FEATURE.key(), Changed.MODID);
 

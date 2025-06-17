@@ -27,10 +27,10 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraftforge.items.CapabilityItemHandler;
-import net.minecraftforge.items.IItemHandler;
-import net.minecraftforge.items.ItemStackHandler;
-import net.minecraftforge.items.SlotItemHandler;
+import net.neoforged.items.CapabilityItemHandler;
+import net.neoforged.items.IItemHandler;
+import net.neoforged.items.ItemStackHandler;
+import net.neoforged.items.SlotItemHandler;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;

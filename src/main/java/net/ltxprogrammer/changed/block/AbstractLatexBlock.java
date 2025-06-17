@@ -26,7 +26,7 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
-import net.minecraftforge.common.MinecraftForge;
+import net.neoforged.neoforge.common.NeoForge;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Arrays;
@@ -76,7 +76,7 @@ public abstract class AbstractLatexBlock extends Block implements NonLatexCovera
     private static final float NEUTRAL_HINDER = 0.75F;
 
     @Override
-    public boolean canSustainPlant(BlockState state, BlockGetter world, BlockPos pos, Direction facing, net.minecraftforge.common.IPlantable plantable) {
+    public boolean canSustainPlant(BlockState state, BlockGetter world, BlockPos pos, Direction facing, net.neoforged.neoforge.common.IPlantable plantable) {
         if (latexType != LatexType.DARK_LATEX) return false;
 
         BlockState plant = plantable.getPlant(world, pos.relative(facing));

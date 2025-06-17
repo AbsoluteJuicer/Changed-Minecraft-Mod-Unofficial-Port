@@ -3,9 +3,9 @@ package net.ltxprogrammer.changed.init;
 import net.ltxprogrammer.changed.effect.Hypercoagulation;
 import net.ltxprogrammer.changed.effect.Shock;
 import net.minecraft.world.effect.MobEffect;
-import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
+import net.neoforged.neoforge.event.RegistryEvent;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.Mod;
 
 import java.util.ArrayList;
 import java.util.List;

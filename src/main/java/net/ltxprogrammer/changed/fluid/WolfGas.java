@@ -13,8 +13,8 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
-import net.minecraftforge.fluids.FluidAttributes;
-import net.minecraftforge.fluids.ForgeFlowingFluid;
+import net.neoforged.fluids.FluidAttributes;
+import net.neoforged.fluids.ForgeFlowingFluid;
 
 public abstract class WolfGas extends TransfurGas {
     public static final ForgeFlowingFluid.Properties PROPERTIES = new ForgeFlowingFluid.Properties(

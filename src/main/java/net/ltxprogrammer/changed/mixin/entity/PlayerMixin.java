@@ -31,8 +31,8 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.network.PacketDistributor;
-import net.minecraftforge.registries.ForgeRegistries;
+import net.neoforged.neoforge.network.PacketDistributor;
+import net.neoforged.neoforge.registries.NeoForgeRegistries;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Final;
@@ -103,7 +103,7 @@ public abstract class PlayerMixin extends LivingEntity implements PlayerDataExte
     @Inject(method = "getSwimSound", at = @At("HEAD"), cancellable = true)
     protected void getSwimSound(CallbackInfoReturnable<SoundEvent> ci) {
         if (WhiteLatexTransportInterface.isEntityInWhiteLatex(this)) {
-            ci.setReturnValue(ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.slime_block.step")));
+            ci.setReturnValue(NeoForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.slime_block.step")));
             ci.cancel();
         }
     }

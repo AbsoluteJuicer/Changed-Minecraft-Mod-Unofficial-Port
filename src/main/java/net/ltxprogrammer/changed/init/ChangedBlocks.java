@@ -30,16 +30,16 @@ import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.client.event.ColorHandlerEvent;
-import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.DistExecutor;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
+import net.neoforged.client.event.ColorHandlerEvent;
+import net.neoforged.neoforge.event.RegistryEvent;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.DistExecutor;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.registries.DeferredRegister;
+import net.neoforged.neoforge.registries.NeoForgeRegistries;
+import net.neoforged.neoforge.registries.RegistryObject;
 
 import javax.annotation.Nullable;
 import java.util.*;
@@ -63,7 +63,7 @@ public class ChangedBlocks {
         return false;
     }
     
-    public static final DeferredRegister<Block> REGISTRY = DeferredRegister.create(ForgeRegistries.BLOCKS, Changed.MODID);
+    public static final DeferredRegister<Block> REGISTRY = DeferredRegister.create(NeoForgeRegistries.BLOCKS, Changed.MODID);
     private static final Map<RegistryObject<? extends Block>, Consumer<Block>> REGISTRY_CRL = new HashMap<>();
 
     public static final RegistryObject<FreshAirBlock> FRESH_AIR = registerNoItem("fresh_air", () -> new FreshAirBlock(BlockBehaviour.Properties.of(Material.AIR).noCollission().noDrops().air()));

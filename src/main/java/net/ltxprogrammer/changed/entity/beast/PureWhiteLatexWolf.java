@@ -6,7 +6,7 @@ import net.minecraft.world.entity.ai.attributes.AttributeMap;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.common.ForgeMod;
+import net.neoforged.neoforge.common.ForgeMod;
 
 public class PureWhiteLatexWolf extends WhiteLatexEntity {
     public PureWhiteLatexWolf(EntityType<? extends PureWhiteLatexWolf> p_19870_, Level p_19871_) {

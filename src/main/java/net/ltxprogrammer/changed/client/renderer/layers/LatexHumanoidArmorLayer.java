@@ -21,8 +21,8 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
 
 import javax.annotation.Nullable;
 import java.util.Map;
@@ -59,7 +59,7 @@ public class LatexHumanoidArmorLayer<T extends ChangedEntity, M extends Advanced
             ArmorItem armoritem = (ArmorItem)itemstack.getItem();
             if (armoritem.getSlot() == slot) {
                 boolean foil = itemstack.hasFoil();
-                var altModel = net.minecraftforge.client.ForgeHooksClient.getArmorModel(entity, itemstack, slot, model);
+                var altModel = net.neoforged.client.ForgeHooksClient.getArmorModel(entity, itemstack, slot, model);
                 if (altModel != model) {
                     if (armoritem instanceof net.minecraft.world.item.DyeableLeatherItem) {
                         int i = ((net.minecraft.world.item.DyeableLeatherItem)armoritem).getColor(itemstack);
@@ -140,7 +140,7 @@ public class LatexHumanoidArmorLayer<T extends ChangedEntity, M extends Advanced
         }
         String s1 = String.format(java.util.Locale.ROOT, "%s:textures/models/armor/%s_layer_%d%s.png", domain, texture, (usesInnerModel(slot) ? 2 : 1), type == null ? "" : String.format(java.util.Locale.ROOT, "_%s", type));
 
-        s1 = net.minecraftforge.client.ForgeHooksClient.getArmorTexture(entity, stack, s1, slot, type);
+        s1 = net.neoforged.client.ForgeHooksClient.getArmorTexture(entity, stack, s1, slot, type);
         ResourceLocation resourcelocation = ARMOR_LOCATION_CACHE.get(s1);
 
         if (resourcelocation == null) {

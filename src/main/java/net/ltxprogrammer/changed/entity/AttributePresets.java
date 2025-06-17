@@ -2,7 +2,7 @@ package net.ltxprogrammer.changed.entity;
 
 import net.minecraft.world.entity.ai.attributes.AttributeMap;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraftforge.common.ForgeMod;
+import net.neoforged.neoforge.common.ForgeMod;
 
 public abstract class AttributePresets {
     /*

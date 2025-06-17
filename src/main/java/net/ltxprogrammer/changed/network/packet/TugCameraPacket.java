@@ -4,8 +4,8 @@ import net.ltxprogrammer.changed.entity.PlayerDataExtension;
 import net.ltxprogrammer.changed.util.CameraUtil;
 import net.ltxprogrammer.changed.util.UniversalDist;
 import net.minecraft.network.FriendlyByteBuf;
-import net.minecraftforge.fml.LogicalSide;
-import net.minecraftforge.network.NetworkEvent;
+import net.neoforged.fml.LogicalSide;
+import net.neoforged.neoforge.network.NetworkEvent;
 
 import java.util.function.Supplier;
 

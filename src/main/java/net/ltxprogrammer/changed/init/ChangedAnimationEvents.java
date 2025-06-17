@@ -8,9 +8,9 @@ import net.ltxprogrammer.changed.entity.animation.*;
 import net.ltxprogrammer.changed.entity.variant.TransfurVariant;
 import net.ltxprogrammer.changed.network.packet.AnimationEventPacket;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraftforge.network.PacketDistributor;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.neoforge.network.PacketDistributor;
+import net.neoforged.neoforge.registries.DeferredRegister;
+import net.neoforged.neoforge.registries.RegistryObject;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;

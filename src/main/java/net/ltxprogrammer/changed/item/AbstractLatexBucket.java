@@ -5,8 +5,8 @@ import net.ltxprogrammer.changed.fluid.AbstractLatexFluid;
 import net.ltxprogrammer.changed.init.ChangedTabs;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.item.*;
-import net.minecraftforge.common.capabilities.ICapabilityProvider;
-import net.minecraftforge.fluids.capability.wrappers.FluidBucketWrapper;
+import net.neoforged.neoforge.common.capabilities.ICapabilityProvider;
+import net.neoforged.fluids.capability.wrappers.FluidBucketWrapper;
 
 import javax.annotation.Nullable;
 import java.util.function.Supplier;

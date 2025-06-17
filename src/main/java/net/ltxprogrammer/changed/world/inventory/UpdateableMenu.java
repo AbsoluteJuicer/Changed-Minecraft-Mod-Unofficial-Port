@@ -5,8 +5,8 @@ import net.ltxprogrammer.changed.network.packet.MenuUpdatePacket;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
-import net.minecraftforge.fml.LogicalSide;
-import net.minecraftforge.network.PacketDistributor;
+import net.neoforged.fml.LogicalSide;
+import net.neoforged.neoforge.network.PacketDistributor;
 import org.jetbrains.annotations.Nullable;
 
 public interface UpdateableMenu {

@@ -3,8 +3,8 @@ package net.ltxprogrammer.changed.init;
 import net.ltxprogrammer.changed.Changed;
 import net.ltxprogrammer.changed.data.AccessorySlotType;
 import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.neoforge.registries.DeferredRegister;
+import net.neoforged.neoforge.registries.RegistryObject;
 
 public class ChangedAccessorySlots {
     public static final DeferredRegister<AccessorySlotType> REGISTRY = ChangedRegistry.ACCESSORY_SLOTS.createDeferred(Changed.MODID);

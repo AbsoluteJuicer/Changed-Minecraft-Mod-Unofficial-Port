@@ -16,8 +16,8 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.fluids.FluidAttributes;
-import net.minecraftforge.fluids.ForgeFlowingFluid;
+import net.neoforged.fluids.FluidAttributes;
+import net.neoforged.fluids.ForgeFlowingFluid;
 
 import java.util.List;
 

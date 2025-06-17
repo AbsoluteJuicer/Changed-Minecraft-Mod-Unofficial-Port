@@ -3,10 +3,10 @@ package net.ltxprogrammer.changed.init;
 import net.ltxprogrammer.changed.world.inventory.*;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;
-import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.network.IContainerFactory;
+import net.neoforged.neoforge.event.RegistryEvent;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.network.IContainerFactory;
 
 import java.util.ArrayList;
 import java.util.List;

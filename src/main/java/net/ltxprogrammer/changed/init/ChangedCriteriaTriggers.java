@@ -1,7 +1,7 @@
 package net.ltxprogrammer.changed.init;
 
 import net.ltxprogrammer.changed.advancements.critereon.*;
-import net.minecraftforge.fml.common.Mod;
+import net.neoforged.fml.common.Mod;
 
 import static net.minecraft.advancements.CriteriaTriggers.register;
 

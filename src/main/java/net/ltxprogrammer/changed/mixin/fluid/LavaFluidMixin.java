@@ -30,7 +30,7 @@ public abstract class LavaFluidMixin extends FlowingFluid {
             FluidState fluidstate = level.getFluidState(pos);
             if (this.is(FluidTags.LAVA) && fluidstate.is(ChangedTags.Fluids.LATEX)) {
                 if (blockState.getBlock() instanceof LiquidBlock) {
-                    level.setBlock(pos, net.minecraftforge.event.ForgeEventFactory.fireFluidPlaceBlockEvent(level, pos, pos, Blocks.AIR.defaultBlockState()), 3);
+                    level.setBlock(pos, net.neoforged.neoforge.event.ForgeEventFactory.fireFluidPlaceBlockEvent(level, pos, pos, Blocks.AIR.defaultBlockState()), 3);
                 }
 
                 this.fizz(level, pos);

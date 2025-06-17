@@ -1,7 +1,7 @@
 package net.ltxprogrammer.changed.init;
 
 import net.minecraft.world.level.GameRules;
-import net.minecraftforge.fml.common.Mod;
+import net.neoforged.fml.common.Mod;
 
 import static net.minecraft.world.level.GameRules.register;
 

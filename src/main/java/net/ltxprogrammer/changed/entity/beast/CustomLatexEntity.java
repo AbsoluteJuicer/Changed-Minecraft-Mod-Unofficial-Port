@@ -19,7 +19,7 @@ import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.ai.attributes.AttributeMap;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.common.ForgeMod;
+import net.neoforged.neoforge.common.ForgeMod;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;

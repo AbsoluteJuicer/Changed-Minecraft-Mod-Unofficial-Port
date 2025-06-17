@@ -26,7 +26,7 @@ public class WolfCrystalBlock extends AbstractLatexIceBlock {
     }
 
     @Override
-    public boolean canSustainPlant(BlockState state, BlockGetter world, BlockPos pos, Direction facing, net.minecraftforge.common.IPlantable plantable) {
+    public boolean canSustainPlant(BlockState state, BlockGetter world, BlockPos pos, Direction facing, net.neoforged.neoforge.common.IPlantable plantable) {
 
         BlockState plant = plantable.getPlant(world, pos.relative(facing));
         if (plant.getBlock() instanceof WolfCrystal)

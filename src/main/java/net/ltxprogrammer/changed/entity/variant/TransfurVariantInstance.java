@@ -36,19 +36,19 @@ import net.minecraft.world.entity.ai.attributes.*;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
-import net.minecraftforge.common.ForgeMod;
-import net.minecraftforge.event.TickEvent;
-import net.minecraftforge.event.entity.EntityEvent;
-import net.minecraftforge.event.entity.EntityJoinWorldEvent;
-import net.minecraftforge.event.entity.living.LivingAttackEvent;
-import net.minecraftforge.event.entity.living.LivingDeathEvent;
-import net.minecraftforge.event.entity.living.LivingFallEvent;
-import net.minecraftforge.event.entity.player.PlayerEvent;
-import net.minecraftforge.event.entity.player.PlayerInteractEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.network.PacketDistributor;
-import net.minecraftforge.registries.ForgeRegistries;
+import net.neoforged.neoforge.common.ForgeMod;
+import net.neoforged.neoforge.event.TickEvent;
+import net.neoforged.neoforge.event.entity.EntityEvent;
+import net.neoforged.neoforge.event.entity.EntityJoinWorldEvent;
+import net.neoforged.neoforge.event.entity.living.LivingAttackEvent;
+import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
+import net.neoforged.neoforge.event.entity.living.LivingFallEvent;
+import net.neoforged.neoforge.event.entity.player.PlayerEvent;
+import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.network.PacketDistributor;
+import net.neoforged.neoforge.registries.NeoForgeRegistries;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
@@ -103,7 +103,7 @@ public abstract class TransfurVariantInstance<T extends ChangedEntity> {
 
     private Map<Attribute, Double> getBaseAttributeValues(AttributeMap attributeMap) {
         Map<Attribute, Double> map = new HashMap<>();
-        ForgeRegistries.ATTRIBUTES.getValues().stream()
+        NeoForgeRegistries.ATTRIBUTES.getValues().stream()
                 .filter(attributeMap::hasAttribute)
                 .forEach(attribute -> map.put(attribute, attributeMap.getBaseValue(attribute)));
         return map;
@@ -119,10 +119,10 @@ public abstract class TransfurVariantInstance<T extends ChangedEntity> {
         tag.putInt("ticksFlying", ticksFlying);
 
         tag.put("previousAttributes", TagUtil.createMap(previousAttributes, (attribute, base, map) ->
-            map.putDouble(ForgeRegistries.ATTRIBUTES.getKey(attribute).toString(), base)
+            map.putDouble(NeoForgeRegistries.ATTRIBUTES.getKey(attribute).toString(), base)
         ));
         tag.put("newAttributes", TagUtil.createMap(newAttributes, (attribute, base, map) ->
-            map.putDouble(ForgeRegistries.ATTRIBUTES.getKey(attribute).toString(), base)
+            map.putDouble(NeoForgeRegistries.ATTRIBUTES.getKey(attribute).toString(), base)
         ));
         tag.putFloat("transfurProgressionO", transfurProgressionO);
         tag.putFloat("transfurProgression", transfurProgression);
@@ -144,12 +144,12 @@ public abstract class TransfurVariantInstance<T extends ChangedEntity> {
         ticksFlying = tag.getInt("ticksFlying");
 
         TagUtil.readMap(tag.getCompound("previousAttributes"), (key, map) ->
-                Util.ifElse(Optional.ofNullable(ForgeRegistries.ATTRIBUTES.getValue(new ResourceLocation(key))), attribute ->
+                Util.ifElse(Optional.ofNullable(NeoForgeRegistries.ATTRIBUTES.getValue(new ResourceLocation(key))), attribute ->
                         previousAttributes.put(attribute, map.getDouble(key)),
                         () -> TagUtil.LOGGER.warn("Missing registered attribute {}", key))
         );
         TagUtil.readMap(tag.getCompound("newAttributes"), (key, map) ->
-                Util.ifElse(Optional.ofNullable(ForgeRegistries.ATTRIBUTES.getValue(new ResourceLocation(key))), attribute ->
+                Util.ifElse(Optional.ofNullable(NeoForgeRegistries.ATTRIBUTES.getValue(new ResourceLocation(key))), attribute ->
                         newAttributes.put(attribute, map.getDouble(key)),
                         () -> TagUtil.LOGGER.warn("Missing registered attribute {}", key))
         );
@@ -666,7 +666,7 @@ public abstract class TransfurVariantInstance<T extends ChangedEntity> {
 
         float healthPercentage = player.getHealth() / player.getMaxHealth();
 
-        ForgeRegistries.ATTRIBUTES.getValues().stream().filter(variantAttributes0::containsKey).filter(variantAttributes1::containsKey)
+        NeoForgeRegistries.ATTRIBUTES.getValues().stream().filter(variantAttributes0::containsKey).filter(variantAttributes1::containsKey)
                 .forEach(attribute -> {
                     final var hostAttributeInstance = hostAttributes.getInstance(attribute);
                     if (hostAttributeInstance == null) return;

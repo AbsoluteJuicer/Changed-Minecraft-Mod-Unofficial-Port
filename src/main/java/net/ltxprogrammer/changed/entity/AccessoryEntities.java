@@ -25,12 +25,12 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraftforge.eventbus.api.Event;
-import net.minecraftforge.fml.LogicalSide;
-import net.minecraftforge.items.ItemHandlerHelper;
-import net.minecraftforge.network.NetworkEvent;
-import net.minecraftforge.network.PacketDistributor;
-import net.minecraftforge.registries.ForgeRegistries;
+import net.neoforged.bus.api.Event;
+import net.neoforged.fml.LogicalSide;
+import net.neoforged.neoforge.items.ItemHandlerHelper;
+import net.neoforged.neoforge.network.NetworkEvent;
+import net.neoforged.neoforge.network.PacketDistributor;
+import net.neoforged.neoforge.registries.NeoForgeRegistries;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -76,9 +76,9 @@ public class AccessoryEntities extends SimplePreparableReloadListener<Multimap<E
 
         root.getAsJsonArray("entities").forEach(entity -> {
             final ResourceLocation entityId = new ResourceLocation(entity.getAsString());
-            if (!ForgeRegistries.ENTITIES.containsKey(entityId))
+            if (!NeoForgeRegistries.ENTITIES.containsKey(entityId))
                 throw new IllegalArgumentException("Unknown entity " + entityId);
-            final EntityType<?> entityType = ForgeRegistries.ENTITIES.getValue(new ResourceLocation(entity.getAsString()));
+            final EntityType<?> entityType = NeoForgeRegistries.ENTITIES.getValue(new ResourceLocation(entity.getAsString()));
 
             root.getAsJsonArray("slots").forEach(slot -> {
                 working.put(entityType, ChangedRegistry.ACCESSORY_SLOTS.get().getValue(new ResourceLocation(slot.getAsString())));

@@ -4,9 +4,9 @@ import net.minecraft.core.RegistryAccess;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
-import net.minecraftforge.event.AddReloadListenerEvent;
-import net.minecraftforge.fml.ModList;
-import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
+import net.neoforged.neoforge.event.AddReloadListenerEvent;
+import net.neoforged.fml.ModList;
+import net.neoforged.forge.event.lifecycle.GatherDataEvent;
 
 import java.util.stream.Stream;
 

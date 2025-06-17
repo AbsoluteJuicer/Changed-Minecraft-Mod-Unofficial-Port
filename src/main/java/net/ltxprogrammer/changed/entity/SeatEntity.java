@@ -19,7 +19,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
-import net.minecraftforge.network.NetworkHooks;
+import net.neoforged.neoforge.network.NetworkHooks;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Optional;
@@ -201,12 +201,12 @@ public class SeatEntity extends Entity {
     }
 
     @Override
-    protected void defineSynchedData() {
-        this.entityData.define(BLOCK_STATE, Optional.empty());
-        this.entityData.define(BLOCK_POS, BlockPos.ZERO);
-        this.entityData.define(SEATED_INVISIBLE, false);
-        this.entityData.define(SEATED_LOCKED, false);
-        this.entityData.define(SEATED_ANIMATE, true);
+    protected void defineSynchedData(SynchedEntityData.Builder builder) {
+        builder.define(BLOCK_STATE, Optional.empty())
+                .define(BLOCK_POS, BlockPos.ZERO)
+                .define(SEATED_INVISIBLE, false)
+                .define(SEATED_LOCKED, false)
+                .define(SEATED_ANIMATE, true);
     }
 
     @Override
@@ -237,4 +237,5 @@ public class SeatEntity extends Entity {
     public @NotNull Packet<?> getAddEntityPacket() {
         return NetworkHooks.getEntitySpawningPacket(this);
     }
+
 }

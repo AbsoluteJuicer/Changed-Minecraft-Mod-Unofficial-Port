@@ -39,7 +39,7 @@ import java.util.Random;
 import static net.ltxprogrammer.changed.block.AbstractLatexBlock.*;
 
 @Mixin(BlockBehaviour.class)
-public abstract class BlockBehaviourMixin extends net.minecraftforge.registries.ForgeRegistryEntry<Block> {
+public abstract class BlockBehaviourMixin extends net.neoforged.neoforge.registries.ForgeRegistryEntry<Block> {
     @Inject(method = "randomTick", at = @At("HEAD"), cancellable = true)
     public void randomTick(@NotNull BlockState state, @NotNull ServerLevel level, @NotNull BlockPos position, @NotNull Random random, CallbackInfo callbackInfo) {
         if (state.getProperties().contains(COVERED) && state.getValue(COVERED) != LatexType.NEUTRAL) {

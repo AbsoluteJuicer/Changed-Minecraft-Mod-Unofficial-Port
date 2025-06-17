@@ -4,7 +4,7 @@ import net.ltxprogrammer.changed.block.entity.GluBlockEntity;
 import net.ltxprogrammer.changed.world.features.structures.facility.Zone;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.FriendlyByteBuf;
-import net.minecraftforge.network.NetworkEvent;
+import net.neoforged.neoforge.network.NetworkEvent;
 
 import java.util.function.Supplier;
 

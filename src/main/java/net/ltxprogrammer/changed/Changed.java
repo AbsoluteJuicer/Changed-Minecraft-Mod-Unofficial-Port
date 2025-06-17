@@ -17,23 +17,23 @@ import net.ltxprogrammer.changed.world.ChangedDataFixer;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.ComposterBlock;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.AddPackFindersEvent;
-import net.minecraftforge.event.AddReloadListenerEvent;
-import net.minecraftforge.eventbus.api.Event;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.eventbus.api.IEventBusInvokeDispatcher;
-import net.minecraftforge.fml.DistExecutor;
-import net.minecraftforge.fml.ModLoadingContext;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.IModBusEvent;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.network.NetworkEvent;
-import net.minecraftforge.network.NetworkRegistry;
-import net.minecraftforge.network.simple.SimpleChannel;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.event.AddPackFindersEvent;
+import net.neoforged.neoforge.event.AddReloadListenerEvent;
+import net.neoforged.bus.api.Event;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.bus.api.IEventBusInvokeDispatcher;
+import net.neoforged.fml.DistExecutor;
+import net.neoforged.fml.ModLoadingContext;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.event.IModBusEvent;
+import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.neoforged.neoforge.network.NetworkEvent;
+import net.neoforged.neoforge.network.NetworkRegistry;
+import net.neoforged.neoforge.network.simple.SimpleChannel;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -133,7 +133,7 @@ public class Changed {
     }
 
     private void registerClientEventListeners() {
-        MinecraftForge.EVENT_BUS.register(eventHandlerClient = new EventHandlerClient());
+        neoforged.EVENT_BUS.register(eventHandlerClient = new EventHandlerClient());
     }
 
     private void clientSetup(final FMLClientSetupEvent event) {
@@ -188,14 +188,14 @@ public class Changed {
     }
 
     public static <T extends Event> void addEventListener(Consumer<T> listener) {
-        MinecraftForge.EVENT_BUS.addListener(listener);
+        neoforged.EVENT_BUS.addListener(listener);
     }
 
     public static <T extends Event> boolean postModEvent(T event) {
-        return MinecraftForge.EVENT_BUS.post(event);
+        return neoforged.EVENT_BUS.post(event);
     }
 
     public static <T extends Event> boolean postModEvent(T event, IEventBusInvokeDispatcher dispatcher) {
-        return MinecraftForge.EVENT_BUS.post(event, dispatcher);
+        return neoforged.EVENT_BUS.post(event, dispatcher);
     }
 }

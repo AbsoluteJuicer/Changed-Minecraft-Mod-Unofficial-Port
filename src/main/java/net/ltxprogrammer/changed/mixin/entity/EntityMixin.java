@@ -42,7 +42,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import java.util.Optional;
 
 @Mixin(Entity.class)
-public abstract class EntityMixin extends net.minecraftforge.common.capabilities.CapabilityProvider<Entity> implements Nameable, EntityAccess, CommandSource, net.minecraftforge.common.extensions.IForgeEntity {
+public abstract class EntityMixin extends net.neoforged.neoforge.common.capabilities.CapabilityProvider<Entity> implements Nameable, EntityAccess, CommandSource, net.neoforged.neoforge.common.extensions.IForgeEntity {
     protected EntityMixin(Class<Entity> baseClass) {
         super(baseClass);
     }

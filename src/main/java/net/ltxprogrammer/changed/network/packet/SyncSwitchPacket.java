@@ -5,8 +5,8 @@ import net.ltxprogrammer.changed.world.inventory.GuiStateProvider;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraftforge.network.NetworkEvent;
-import net.minecraftforge.server.ServerLifecycleHooks;
+import net.neoforged.neoforge.network.NetworkEvent;
+import net.neoforged.server.ServerLifecycleHooks;
 
 import java.util.function.Supplier;
 

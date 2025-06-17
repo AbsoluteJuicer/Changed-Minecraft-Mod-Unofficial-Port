@@ -25,10 +25,10 @@ import net.minecraft.server.packs.resources.PreparableReloadListener;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.levelgen.structure.BoundingBox;
 import net.minecraft.world.phys.AABB;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.client.event.RenderLevelStageEvent;
-import net.minecraftforge.event.TickEvent;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
+import net.neoforged.client.event.RenderLevelStageEvent;
+import net.neoforged.neoforge.event.TickEvent;
 
 import java.util.ArrayList;
 import java.util.List;

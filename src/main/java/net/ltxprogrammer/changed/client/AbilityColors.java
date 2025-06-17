@@ -14,7 +14,7 @@ import java.util.function.Supplier;
 public class AbilityColors {
     public static final int DEFAULT = -1;
     // FORGE: Use RegistryDelegates as non-Vanilla item ids are not constant
-    private final java.util.Map<net.minecraftforge.registries.IRegistryDelegate<AbstractAbility<?>>, AbilityColor> abilityColors = new java.util.HashMap<>();
+    private final java.util.Map<net.neoforged.neoforge.registries.IRegistryDelegate<AbstractAbility<?>>, AbilityColor> abilityColors = new java.util.HashMap<>();
 
     public static AbstractRadialScreen.ColorScheme getAbilityColors(AbstractAbilityInstance abilityInstance) {
         return AbstractRadialScreen.getColors(abilityInstance.entity.getTransfurVariantInstance()).setForegroundToBright();

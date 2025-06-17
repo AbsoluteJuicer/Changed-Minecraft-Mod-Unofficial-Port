@@ -5,10 +5,10 @@ import net.ltxprogrammer.changed.block.entity.*;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.registries.DeferredRegister;
+import net.neoforged.neoforge.registries.NeoForgeRegistries;
+import net.neoforged.neoforge.registries.RegistryObject;
 
 import java.util.Arrays;
 import java.util.function.Supplier;
@@ -26,7 +26,7 @@ public class ChangedBlockEntities {
         return () -> new BlockEntityType<T>(entitySupplier, blocks.map(Supplier::get).collect(Collectors.toSet()), null);
     }
 
-    public static final DeferredRegister<BlockEntityType<?>> REGISTRY = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITIES, Changed.MODID);
+    public static final DeferredRegister<BlockEntityType<?>> REGISTRY = DeferredRegister.create(NeoForgeRegistries.BLOCK_ENTITIES, Changed.MODID);
     public static final RegistryObject<BlockEntityType<PurifierBlockEntity>> PURIFIER = REGISTRY.register("purifier", deferredProvider(PurifierBlockEntity::new, ChangedBlocks.PURIFIER));
     public static final RegistryObject<BlockEntityType<CardboardBoxTallBlockEntity>> CARDBOARD_BOX_TALL = REGISTRY.register("cardboard_box", deferredProvider(CardboardBoxTallBlockEntity::new, ChangedBlocks.CARDBOARD_BOX_TALL));
     public static final RegistryObject<BlockEntityType<KeypadBlockEntity>> KEYPAD = REGISTRY.register("keypad", deferredProvider(KeypadBlockEntity::new, ChangedBlocks.KEYPAD));

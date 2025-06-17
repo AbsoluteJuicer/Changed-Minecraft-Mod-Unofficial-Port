@@ -11,10 +11,10 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
-import net.minecraftforge.event.AddReloadListenerEvent;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.IForgeRegistry;
-import net.minecraftforge.registries.IForgeRegistryEntry;
+import net.neoforged.neoforge.event.AddReloadListenerEvent;
+import net.neoforged.neoforge.registries.NeoForgeRegistries;
+import net.neoforged.neoforge.registries.IForgeRegistry;
+import net.neoforged.neoforge.registries.IForgeRegistryEntry;
 import org.slf4j.Logger;
 
 import java.lang.reflect.Field;
@@ -217,7 +217,7 @@ public class ChangedCompatibility {
     }
 
     private static final Cacheable<Enchantment> enchantment_enigmaticlegacy_eternalbinding
-            = findRegistryObject(ForgeRegistries.ENCHANTMENTS, new ResourceLocation("enigmaticlegacy", "eternal_binding_curse"));
+            = findRegistryObject(NeoForgeRegistries.ENCHANTMENTS, new ResourceLocation("enigmaticlegacy", "eternal_binding_curse"));
 
     public static void shouldAccessoryDropOnDeath(AccessorySlots.DropItemEvent event) {
         if (EnchantmentHelper.getItemEnchantmentLevel(enchantment_enigmaticlegacy_eternalbinding.get(), event.getStack()) > 0)

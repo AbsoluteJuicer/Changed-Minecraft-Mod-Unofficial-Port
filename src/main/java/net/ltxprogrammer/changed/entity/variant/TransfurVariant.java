@@ -25,12 +25,12 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.eventbus.api.Event;
-import net.minecraftforge.fml.DistExecutor;
-import net.minecraftforge.fml.event.IModBusEvent;
-import net.minecraftforge.registries.ForgeRegistryEntry;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.bus.api.Event;
+import net.neoforged.fml.DistExecutor;
+import net.neoforged.fml.event.IModBusEvent;
+import net.neoforged.neoforge.registries.ForgeRegistryEntry;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;

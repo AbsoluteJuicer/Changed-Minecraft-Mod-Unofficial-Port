@@ -1,7 +1,7 @@
 package net.ltxprogrammer.changed.entity.variant;
 
 import net.minecraft.util.StringRepresentable;
-import net.minecraftforge.common.IExtensibleEnum;
+import net.neoforged.neoforge.common.IExtensibleEnum;
 
 /**
  * Describes the shape of the entity, and what armor they can wear

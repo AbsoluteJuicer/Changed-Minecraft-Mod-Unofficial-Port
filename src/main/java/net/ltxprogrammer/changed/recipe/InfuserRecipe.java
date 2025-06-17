@@ -140,7 +140,7 @@ public class InfuserRecipe implements Recipe<SimpleContainer> {
             }
         }
 
-        return i == this.ingredients.size() && (isSimple ? stackedcontents.canCraft(this, (IntList)null) : net.minecraftforge.common.util.RecipeMatcher.findMatches(inputs,  this.ingredients) != null);
+        return i == this.ingredients.size() && (isSimple ? stackedcontents.canCraft(this, (IntList)null) : net.neoforged.neoforge.common.util.RecipeMatcher.findMatches(inputs,  this.ingredients) != null);
     }
 
     public ItemStack assemble(SimpleContainer p_44260_) {
@@ -164,7 +164,7 @@ public class InfuserRecipe implements Recipe<SimpleContainer> {
         return component;
     }
 
-    public static class Serializer extends net.minecraftforge.registries.ForgeRegistryEntry<RecipeSerializer<?>> implements RecipeSerializer<InfuserRecipe> {
+    public static class Serializer extends net.neoforged.neoforge.registries.ForgeRegistryEntry<RecipeSerializer<?>> implements RecipeSerializer<InfuserRecipe> {
         public InfuserRecipe fromJson(ResourceLocation p_44290_, JsonObject p_44291_) {
             String s = GsonHelper.getAsString(p_44291_, "group", "");
             NonNullList<Ingredient> nonnulllist = itemsFromJson(GsonHelper.getAsJsonArray(p_44291_, "ingredients"));
@@ -184,7 +184,7 @@ public class InfuserRecipe implements Recipe<SimpleContainer> {
 
             for (int i = 0; i < p_44276_.size(); ++i) {
                 Ingredient ingredient = Ingredient.fromJson(p_44276_.get(i));
-                if (net.minecraftforge.common.ForgeConfig.SERVER.skipEmptyShapelessCheck.get() || !ingredient.isEmpty()) {
+                if (net.neoforged.neoforge.common.ForgeConfig.SERVER.skipEmptyShapelessCheck.get() || !ingredient.isEmpty()) {
                     nonnulllist.add(ingredient);
                 }
             }

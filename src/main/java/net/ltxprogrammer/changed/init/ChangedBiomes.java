@@ -27,12 +27,12 @@ import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
-import net.minecraftforge.event.server.ServerAboutToStartEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.neoforge.event.server.ServerAboutToStartEvent;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.registries.DeferredRegister;
+import net.neoforged.neoforge.registries.NeoForgeRegistries;
+import net.neoforged.neoforge.registries.RegistryObject;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -52,7 +52,7 @@ public class ChangedBiomes {
     }
 
     public static final Map<RegistryObject<Biome>, ChangedBiomeInterface> DESCRIPTORS = new HashMap<>();
-    public static final DeferredRegister<Biome> REGISTRY = DeferredRegister.create(ForgeRegistries.BIOMES, Changed.MODID);
+    public static final DeferredRegister<Biome> REGISTRY = DeferredRegister.create(NeoForgeRegistries.BIOMES, Changed.MODID);
     public static final BiomeHolder<DarkLatexPlains> DARK_LATEX_PLAINS = register("dark_latex_plains", DarkLatexPlains::new);
     public static final BiomeHolder<WhiteLatexForest> WHITE_LATEX_FOREST = register("white_latex_forest", WhiteLatexForest::new);
 

@@ -5,8 +5,8 @@ import net.ltxprogrammer.changed.world.features.structures.SurfaceNBTPiece;
 import net.ltxprogrammer.changed.world.features.structures.facility.FacilitySinglePiece;
 import net.minecraft.core.Registry;
 import net.minecraft.world.level.levelgen.structure.pieces.StructurePieceType;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.neoforge.registries.DeferredRegister;
+import net.neoforged.neoforge.registries.RegistryObject;
 
 import java.util.Locale;
 

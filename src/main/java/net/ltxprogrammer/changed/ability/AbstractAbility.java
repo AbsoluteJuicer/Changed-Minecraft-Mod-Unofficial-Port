@@ -11,8 +11,8 @@ import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraftforge.network.PacketDistributor;
-import net.minecraftforge.registries.ForgeRegistryEntry;
+import net.neoforged.neoforge.network.PacketDistributor;
+import net.neoforged.neoforge.registries.IForgeRegistryEntry;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
@@ -21,7 +21,7 @@ import java.util.Collections;
 import java.util.Optional;
 import java.util.function.BiFunction;
 
-public abstract class AbstractAbility<Instance extends AbstractAbilityInstance> extends ForgeRegistryEntry<AbstractAbility<?>> {
+public abstract class AbstractAbility<Instance extends AbstractAbilityInstance> extends IForgeRegistryEntry<AbstractAbility<?>> {
     public static class Controller {
         private final AbstractAbilityInstance abilityInstance;
         private boolean startedUsing = false;

@@ -47,7 +47,7 @@ import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.network.PacketDistributor;
+import net.neoforged.neoforge.network.PacketDistributor;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -209,7 +209,7 @@ public abstract class LivingEntityMixin extends Entity implements LivingEntityDa
             ItemStack lastStack = accessorySlots.getLastItem(slotType);
             ItemStack newStack = accessorySlots.getItem(slotType).orElse(ItemStack.EMPTY);
             if (!ItemStack.matches(newStack, lastStack)) {
-                //net.minecraftforge.common.MinecraftForge.EVENT_BUS.post(new net.minecraftforge.event.entity.living.LivingEquipmentChangeEvent(this, equipmentslot, lastStack, newStack));
+                //net.neoforged.neoforge.common.neoforged.EVENT_BUS.post(new net.neoforged.neoforge.event.entity.living.LivingEquipmentChangeEvent(this, equipmentslot, lastStack, newStack));
                 if (map == null) {
                     map = new HashMap<>();
                 }
@@ -365,7 +365,7 @@ public abstract class LivingEntityMixin extends Entity implements LivingEntityDa
     public void travel(Vec3 direction, CallbackInfo callback) {
         if (this.isEffectiveAi() || this.isControlledByLocalInstance()) {
             double d0 = 0.08D;
-            AttributeInstance gravity = this.getAttribute(net.minecraftforge.common.ForgeMod.ENTITY_GRAVITY.get());
+            AttributeInstance gravity = this.getAttribute(net.neoforged.neoforge.common.ForgeMod.ENTITY_GRAVITY.get());
             boolean flag = this.getDeltaMovement().y <= 0.0D;
             if (flag && this.hasEffect(MobEffects.SLOW_FALLING)) {
                 if (!gravity.hasModifier(SLOW_FALLING)) gravity.addTransientModifier(SLOW_FALLING);

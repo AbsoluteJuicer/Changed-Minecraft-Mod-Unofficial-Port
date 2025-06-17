@@ -2,8 +2,8 @@ package net.ltxprogrammer.changed.data;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
-import net.minecraftforge.registries.IForgeRegistry;
-import net.minecraftforge.registries.IForgeRegistryEntry;
+import net.neoforged.neoforge.registries.IForgeRegistry;
+import net.neoforged.neoforge.registries.IForgeRegistryEntry;
 
 import java.util.function.Predicate;
 

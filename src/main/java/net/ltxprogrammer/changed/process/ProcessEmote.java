@@ -6,7 +6,7 @@ import net.ltxprogrammer.changed.init.ChangedParticles;
 import net.ltxprogrammer.changed.network.packet.EmotePacket;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraftforge.network.PacketDistributor;
+import net.neoforged.neoforge.network.PacketDistributor;
 
 public class ProcessEmote {
     private static void rawEmote(LivingEntity entity, Emote emote) {

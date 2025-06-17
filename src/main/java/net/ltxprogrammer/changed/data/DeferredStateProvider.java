@@ -10,8 +10,8 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProviderType;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.neoforge.registries.NeoForgeRegistries;
+import net.neoforged.neoforge.registries.RegistryObject;
 
 import java.util.Random;
 import java.util.function.Supplier;
@@ -47,7 +47,7 @@ public class DeferredStateProvider extends BlockStateProvider {
     public static <P extends BlockStateProvider> BlockStateProviderType<P> register(ResourceLocation p_68763_, Codec<P> p_68764_) {
         BlockStateProviderType<P> value = new BlockStateProviderType<>(p_68764_);
         value.setRegistryName(p_68763_);
-        ForgeRegistries.BLOCK_STATE_PROVIDER_TYPES.register(value);
+        NeoForgeRegistries.BLOCK_STATE_PROVIDER_TYPES.register(value);
         return value;
     }
 }

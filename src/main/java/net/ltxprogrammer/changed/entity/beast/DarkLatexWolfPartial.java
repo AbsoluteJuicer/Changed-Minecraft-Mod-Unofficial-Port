@@ -12,9 +12,9 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeMap;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.common.ForgeMod;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
+import net.neoforged.neoforge.common.ForgeMod;
 
 public class DarkLatexWolfPartial extends AbstractDarkLatexEntity implements ComplexRenderer {
     public DarkLatexWolfPartial(EntityType<? extends DarkLatexWolfPartial> p_19870_, Level p_19871_) {

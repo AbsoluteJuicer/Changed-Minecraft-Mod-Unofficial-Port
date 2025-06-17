@@ -4,7 +4,7 @@ import net.ltxprogrammer.changed.Changed;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraftforge.common.IExtensibleEnum;
+import net.neoforged.neoforge.common.IExtensibleEnum;
 import org.apache.commons.lang3.NotImplementedException;
 
 public enum EyeStyle implements IExtensibleEnum {

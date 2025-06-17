@@ -21,10 +21,10 @@ import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.event.entity.living.LivingEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fluids.ForgeFlowingFluid;
-import net.minecraftforge.fml.common.Mod;
+import net.neoforged.neoforge.event.entity.living.LivingEvent;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fluids.ForgeFlowingFluid;
+import net.neoforged.fml.common.Mod;
 
 import java.util.List;
 import java.util.function.Supplier;
@@ -89,7 +89,7 @@ public abstract class AbstractLatexFluid extends ForgeFlowingFluid {
             FluidState otherState = level.getFluidState(pos);
             if (this.is(ChangedTags.Fluids.LATEX) && otherState.is(FluidTags.LAVA)) {
                 if (blockState.getBlock() instanceof LiquidBlock) {
-                    level.setBlock(pos, net.minecraftforge.event.ForgeEventFactory.fireFluidPlaceBlockEvent(level, pos, pos,
+                    level.setBlock(pos, net.neoforged.neoforge.event.ForgeEventFactory.fireFluidPlaceBlockEvent(level, pos, pos,
                             Blocks.SOUL_SOIL.defaultBlockState().setValue(AbstractLatexBlock.COVERED, this.gooType)), 3);
                 }
 

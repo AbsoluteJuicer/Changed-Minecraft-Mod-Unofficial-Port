@@ -25,7 +25,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.client.event.RenderPlayerEvent;
+import net.neoforged.client.event.RenderPlayerEvent;
 import org.jetbrains.annotations.NotNull;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -78,7 +78,7 @@ public abstract class RenderEventsMixin {
         currentPlayer = player;
     }
 
-    @Inject(method = "onEvent", at = @At(value = "INVOKE", target = "Lnet/minecraftforge/client/event/RenderPlayerEvent$Pre;getPlayer()Lnet/minecraft/world/entity/player/Player;"))
+    @Inject(method = "onEvent", at = @At(value = "INVOKE", target = "Lnet/neoforged/client/event/RenderPlayerEvent$Pre;getPlayer()Lnet/minecraft/world/entity/player/Player;"))
     public void copyPlayerForLater(RenderPlayerEvent.Pre event, CallbackInfo ci) {
         currentPlayer = event.getPlayer();
     }

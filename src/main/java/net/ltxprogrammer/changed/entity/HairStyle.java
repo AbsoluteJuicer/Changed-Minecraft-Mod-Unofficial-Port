@@ -4,10 +4,10 @@ import com.google.common.collect.ImmutableList;
 import net.ltxprogrammer.changed.Changed;
 import net.ltxprogrammer.changed.init.ChangedRegistry;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraftforge.common.IExtensibleEnum;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistryEntry;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.neoforge.common.IExtensibleEnum;
+import net.neoforged.neoforge.registries.DeferredRegister;
+import net.neoforged.neoforge.registries.ForgeRegistryEntry;
+import net.neoforged.neoforge.registries.RegistryObject;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;

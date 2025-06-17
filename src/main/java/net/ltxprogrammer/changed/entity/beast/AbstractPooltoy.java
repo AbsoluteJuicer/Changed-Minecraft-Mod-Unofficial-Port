@@ -12,7 +12,7 @@ import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.ai.attributes.AttributeMap;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.registries.ForgeRegistries;
+import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
 public abstract class AbstractPooltoy extends ChangedEntity implements PowderSnowWalkable {
     protected float crouchImpulse = 0f;
@@ -40,12 +40,12 @@ public abstract class AbstractPooltoy extends ChangedEntity implements PowderSno
 
     @Override
     public SoundEvent getHurtSound(DamageSource ds) {
-        return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.hurt"));
+        return NeoForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.hurt"));
     }
 
     @Override
     public SoundEvent getDeathSound() {
-        return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.death"));
+        return NeoForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.death"));
     }
 
     @Override

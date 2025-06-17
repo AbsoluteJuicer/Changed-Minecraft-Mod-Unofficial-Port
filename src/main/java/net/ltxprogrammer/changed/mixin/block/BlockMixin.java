@@ -22,7 +22,7 @@ import static net.ltxprogrammer.changed.block.AbstractLatexBlock.getLatexed;
 import static net.ltxprogrammer.changed.block.AbstractLatexBlock.isLatexed;
 
 @Mixin(Block.class)
-public abstract class BlockMixin extends BlockBehaviour implements ItemLike, net.minecraftforge.common.extensions.IForgeBlock {
+public abstract class BlockMixin extends BlockBehaviour implements ItemLike, net.neoforged.neoforge.common.extensions.IForgeBlock {
     // TODO assimilate blocks into latex blocks more (render, behavior)
     private BlockMixin(Properties p_60452_) {
         super(p_60452_);

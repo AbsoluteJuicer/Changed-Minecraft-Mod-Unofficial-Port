@@ -16,8 +16,8 @@ import net.minecraft.server.packs.resources.ResourceManagerReloadListener;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.client.ForgeHooksClient;
-import net.minecraftforge.client.model.ItemLayerModel;
+import net.neoforged.client.ForgeHooksClient;
+import net.neoforged.client.model.ItemLayerModel;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
@@ -91,7 +91,7 @@ public abstract class ItemRendererMixin implements ResourceManagerReloadListener
             model = model.getOverrides().resolve(model, original, Minecraft.getInstance().level, holder, 0);
 
         pose.pushPose();
-        model = net.minecraftforge.client.ForgeHooksClient.handleCameraTransforms(pose, model, type, leftHand);
+        model = net.neoforged.client.ForgeHooksClient.handleCameraTransforms(pose, model, type, leftHand);
 
         pose.translate(-0.5D, -0.5D, -0.5D);
 

@@ -101,7 +101,7 @@ public abstract class GuiMixin extends GuiComponent {
 
                 for (MobEffectInstance mobeffectinstance : Ordering.natural().reverse().sortedCopy(collection)) {
                     MobEffect mobeffect = mobeffectinstance.getEffect();
-                    net.minecraftforge.client.EffectRenderer renderer = net.minecraftforge.client.RenderProperties.getEffectRenderer(mobeffectinstance);
+                    net.neoforged.client.EffectRenderer renderer = net.neoforged.client.RenderProperties.getEffectRenderer(mobeffectinstance);
                     if (!renderer.shouldRenderHUD(mobeffectinstance)) continue;
                     // Rebind in case previous renderHUDEffect changed texture
                     RenderSystem.setShaderTexture(0, LATEX_INVENTORY_LOCATION);

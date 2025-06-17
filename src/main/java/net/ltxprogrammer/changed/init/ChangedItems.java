@@ -12,16 +12,16 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.registries.DeferredRegister;
+import net.neoforged.neoforge.registries.NeoForgeRegistries;
+import net.neoforged.neoforge.registries.RegistryObject;
 
 import java.util.function.Supplier;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ChangedItems {
-    public static final DeferredRegister<Item> REGISTRY = DeferredRegister.create(ForgeRegistries.ITEMS, Changed.MODID);
+    public static final DeferredRegister<Item> REGISTRY = DeferredRegister.create(NeoForgeRegistries.ITEMS, Changed.MODID);
     public static final RegistryObject<BenignPants> BENIGN_PANTS = register("benign_pants", BenignPants::new);
     public static final RegistryObject<PinkPants> PINK_PANTS = register("pink_pants", PinkPants::new);
     public static final RegistryObject<ClothingItem> SPORTS_BRA = register("sports_bra", ClothingItem::new);

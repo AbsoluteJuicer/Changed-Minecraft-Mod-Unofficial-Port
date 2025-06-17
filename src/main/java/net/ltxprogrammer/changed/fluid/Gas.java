@@ -14,7 +14,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
-import net.minecraftforge.fluids.ForgeFlowingFluid;
+import net.neoforged.fluids.ForgeFlowingFluid;
 
 import java.util.Random;
 
@@ -37,7 +37,7 @@ public abstract class Gas extends ForgeFlowingFluid {
             BlockState blockstate = level.getBlockState(blockpos);
             FluidState fluidstate = blockstate.getFluidState();
             if (fluidstate.getType().isSame(this) && this.canPassThroughWall(direction, level, pos, state, blockpos, blockstate)) {
-                if (fluidstate.isSource() && net.minecraftforge.event.ForgeEventFactory.canCreateFluidSource(level, blockpos, blockstate, this.canConvertToSource())) {
+                if (fluidstate.isSource() && net.neoforged.neoforge.event.ForgeEventFactory.canCreateFluidSource(level, blockpos, blockstate, this.canConvertToSource())) {
                     ++j;
                 }
 

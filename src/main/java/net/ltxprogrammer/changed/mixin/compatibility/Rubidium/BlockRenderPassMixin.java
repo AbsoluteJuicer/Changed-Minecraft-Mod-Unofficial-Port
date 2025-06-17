@@ -4,7 +4,7 @@ import me.jellysquid.mods.sodium.client.render.chunk.passes.BlockRenderPass;
 import net.ltxprogrammer.changed.extension.RequiredMods;
 import net.ltxprogrammer.changed.extension.rubidium.ChangedBlockRenderPass;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraftforge.common.IExtensibleEnum;
+import net.neoforged.neoforge.common.IExtensibleEnum;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;

@@ -42,14 +42,14 @@ import net.minecraft.util.profiling.InactiveProfiler;
 import net.minecraft.util.profiling.ProfilerFiller;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.client.event.ModelBakeEvent;
-import net.minecraftforge.client.event.ModelRegistryEvent;
-import net.minecraftforge.client.event.RegisterClientReloadListenersEvent;
-import net.minecraftforge.eventbus.api.Event;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.registries.ForgeRegistries;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.client.event.ModelBakeEvent;
+import net.neoforged.client.event.ModelRegistryEvent;
+import net.neoforged.client.event.RegisterClientReloadListenersEvent;
+import net.neoforged.bus.api.Event;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.registries.NeoForgeRegistries;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 
@@ -575,7 +575,7 @@ public abstract class LatexCoveredBlockRenderer {
             HashSet<RegistryElementPredicate<Block>> notCoverable = new HashSet<>();
             Changed.postModEvent(new LatexCoveredBlocks.GatherNonCoverableBlocksEvent(notCoverable));
 
-            List<Block> toCover = ForgeRegistries.BLOCKS.getValues().stream().filter(block -> {
+            List<Block> toCover = NeoForgeRegistries.BLOCKS.getValues().stream().filter(block -> {
                 if (!block.getStateDefinition().getProperties().contains(COVERED))
                     return false;
                 return notCoverable.stream().noneMatch(pred -> pred.test(block));

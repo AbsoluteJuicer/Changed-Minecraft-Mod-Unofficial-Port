@@ -6,10 +6,10 @@ import net.ltxprogrammer.changed.block.WhiteLatexTransportInterface;
 import net.ltxprogrammer.changed.init.ChangedRegistry;
 import net.ltxprogrammer.changed.util.InputWrapper;
 import net.minecraft.world.entity.player.Player;
-import net.minecraftforge.fml.LogicalSide;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistryEntry;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.fml.LogicalSide;
+import net.neoforged.neoforge.registries.DeferredRegister;
+import net.neoforged.neoforge.registries.ForgeRegistryEntry;
+import net.neoforged.neoforge.registries.RegistryObject;
 
 public abstract class PlayerMover<T extends PlayerMoverInstance<?>> extends ForgeRegistryEntry<PlayerMover<?>> {
     public abstract T createInstance();

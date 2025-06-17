@@ -28,7 +28,7 @@ import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraftforge.common.PlantType;
+import net.neoforged.neoforge.common.PlantType;
 
 import java.util.List;
 import java.util.function.Supplier;

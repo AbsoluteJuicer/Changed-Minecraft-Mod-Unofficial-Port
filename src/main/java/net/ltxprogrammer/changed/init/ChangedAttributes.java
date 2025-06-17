@@ -4,8 +4,8 @@ import net.ltxprogrammer.changed.Changed;
 import net.minecraft.core.Registry;
 import net.minecraft.world.entity.ai.attributes.RangedAttribute;
 import net.minecraft.world.entity.ai.attributes.Attribute;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.neoforge.registries.DeferredRegister;
+import net.neoforged.neoforge.registries.RegistryObject;
 
 public class ChangedAttributes {
     public static final DeferredRegister<Attribute> REGISTRY = DeferredRegister.create(Registry.ATTRIBUTE_REGISTRY, Changed.MODID);

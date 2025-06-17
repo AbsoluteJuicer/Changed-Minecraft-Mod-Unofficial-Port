@@ -4,7 +4,7 @@ import net.ltxprogrammer.changed.client.ChangedClient;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.client.IItemRenderProperties;
+import net.neoforged.client.IItemRenderProperties;
 
 import java.util.function.Consumer;
 

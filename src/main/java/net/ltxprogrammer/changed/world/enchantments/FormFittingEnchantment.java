@@ -14,7 +14,7 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentCategory;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
-import net.minecraftforge.registries.ForgeRegistries;
+import net.neoforged.neoforge.registries.NeoForgeRegistries;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -31,7 +31,7 @@ public class FormFittingEnchantment extends Enchantment {
     }
 
     private static Stream<ArmorItem> getArmors(ArmorMaterial material, EquipmentSlot slot) {
-        return ForgeRegistries.ITEMS.getValues().stream().map(item -> {
+        return NeoForgeRegistries.ITEMS.getValues().stream().map(item -> {
             if (item instanceof ArmorItem armor)
                 return armor;
             else

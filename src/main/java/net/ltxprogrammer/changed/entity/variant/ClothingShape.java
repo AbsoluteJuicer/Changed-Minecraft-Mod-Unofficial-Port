@@ -3,7 +3,7 @@ package net.ltxprogrammer.changed.entity.variant;
 import net.ltxprogrammer.changed.Changed;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.StringRepresentable;
-import net.minecraftforge.common.IExtensibleEnum;
+import net.neoforged.neoforge.common.IExtensibleEnum;
 
 import javax.annotation.Nullable;
 

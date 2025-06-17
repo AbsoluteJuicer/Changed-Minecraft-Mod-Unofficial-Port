@@ -5,10 +5,10 @@ import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.client.event.ModelRegistryEvent;
-import net.minecraftforge.client.model.ForgeModelBakery;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
+import net.neoforged.client.event.ModelRegistryEvent;
+import net.neoforged.client.model.ForgeModelBakery;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.Mod;
 
 import javax.annotation.Nullable;
 import java.util.function.Consumer;

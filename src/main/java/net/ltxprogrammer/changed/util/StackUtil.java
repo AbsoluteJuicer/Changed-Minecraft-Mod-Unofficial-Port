@@ -1,9 +1,9 @@
 package net.ltxprogrammer.changed.util;
 
 import net.minecraft.Util;
-import net.minecraftforge.accesstransformer.INameHandler;
-import net.minecraftforge.accesstransformer.service.ServiceNameHandler;
-import net.minecraftforge.fml.loading.FMLLoader;
+import net.neoforged.accesstransformer.INameHandler;
+import net.neoforged.accesstransformer.service.ServiceNameHandler;
+import net.neoforged.fml.loading.FMLLoader;
 
 import java.util.function.Function;
 

@@ -5,7 +5,7 @@ import net.ltxprogrammer.changed.process.ProcessEmote;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.network.FriendlyByteBuf;
-import net.minecraftforge.network.NetworkEvent;
+import net.neoforged.neoforge.network.NetworkEvent;
 
 import java.util.Objects;
 import java.util.UUID;

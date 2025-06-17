@@ -20,7 +20,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Vanishable;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.common.ForgeMod;
+import net.neoforged.neoforge.common.ForgeMod;
 
 public abstract class TscWeapon extends Item implements Vanishable {
     private final Cacheable<Multimap<Attribute, AttributeModifier>> defaultModifiers;

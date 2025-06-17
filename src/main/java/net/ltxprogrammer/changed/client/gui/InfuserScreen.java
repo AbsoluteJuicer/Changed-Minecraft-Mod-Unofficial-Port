@@ -22,7 +22,7 @@ import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.player.Inventory;
-import net.minecraftforge.network.PacketDistributor;
+import net.neoforged.neoforge.network.PacketDistributor;
 
 public class InfuserScreen extends AbstractContainerScreen<InfuserMenu> implements RecipeUpdateListener {
     public static class Switch extends AbstractButton {

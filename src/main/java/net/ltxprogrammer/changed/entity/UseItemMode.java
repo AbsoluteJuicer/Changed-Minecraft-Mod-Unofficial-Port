@@ -1,7 +1,7 @@
 package net.ltxprogrammer.changed.entity;
 
 import net.minecraft.world.InteractionHand;
-import net.minecraftforge.common.IExtensibleEnum;
+import net.neoforged.neoforge.common.IExtensibleEnum;
 import org.apache.commons.lang3.NotImplementedException;
 
 public enum UseItemMode implements IExtensibleEnum {

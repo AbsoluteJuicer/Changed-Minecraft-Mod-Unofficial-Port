@@ -5,7 +5,7 @@ import mod.chiselsandbits.client.model.baked.chiseled.VoxelType;
 import net.ltxprogrammer.changed.extension.RequiredMods;
 import net.ltxprogrammer.changed.extension.chiselsandbits.ChangedChiselRenderTypes;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraftforge.common.IExtensibleEnum;
+import net.neoforged.neoforge.common.IExtensibleEnum;
 import org.apache.commons.lang3.NotImplementedException;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;

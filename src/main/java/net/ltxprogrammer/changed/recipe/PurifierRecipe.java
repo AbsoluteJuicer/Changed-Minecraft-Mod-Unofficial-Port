@@ -83,7 +83,7 @@ public class PurifierRecipe implements Recipe<SimpleContainer> {
             }
         }
 
-        return i == 1 && (isSimple ? stackedcontents.canCraft(this, (IntList)null) : net.minecraftforge.common.util.RecipeMatcher.findMatches(inputs,  this.ingredients) != null);
+        return i == 1 && (isSimple ? stackedcontents.canCraft(this, (IntList)null) : net.neoforged.neoforge.common.util.RecipeMatcher.findMatches(inputs,  this.ingredients) != null);
     }
 
     public ItemStack assemble(SimpleContainer p_44260_) {
@@ -94,7 +94,7 @@ public class PurifierRecipe implements Recipe<SimpleContainer> {
         return p_44252_ * p_44253_ >= this.ingredients.size();
     }
 
-    public static class Serializer extends net.minecraftforge.registries.ForgeRegistryEntry<RecipeSerializer<?>> implements RecipeSerializer<PurifierRecipe> {
+    public static class Serializer extends net.neoforged.neoforge.registries.ForgeRegistryEntry<RecipeSerializer<?>> implements RecipeSerializer<PurifierRecipe> {
         public PurifierRecipe fromJson(ResourceLocation id, JsonObject json) {
             String group = GsonHelper.getAsString(json, "group", "");
             Ingredient in = Ingredient.fromJson(json.get("ingredient"));

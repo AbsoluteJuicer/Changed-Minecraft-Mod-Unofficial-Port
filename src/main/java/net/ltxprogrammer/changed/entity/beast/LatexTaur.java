@@ -13,7 +13,7 @@ import net.minecraft.world.entity.Saddleable;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraftforge.network.PacketDistributor;
+import net.neoforged.neoforge.network.PacketDistributor;
 import org.jetbrains.annotations.Nullable;
 
 public interface LatexTaur<T extends ChangedEntity> extends Saddleable {

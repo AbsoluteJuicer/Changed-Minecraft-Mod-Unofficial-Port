@@ -18,7 +18,7 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraftforge.client.event.ContainerScreenEvent;
+import net.neoforged.client.event.ContainerScreenEvent;
 import org.lwjgl.glfw.GLFW;
 
 import javax.annotation.Nullable;

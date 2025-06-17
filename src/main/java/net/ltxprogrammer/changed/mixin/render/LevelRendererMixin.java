@@ -539,13 +539,13 @@ public abstract class LevelRendererMixin {
             profiler.popPush("outline");
             BlockPos blockpos1 = ((BlockHitResult)hitresult).getBlockPos();
             BlockState blockstate = this.level.getBlockState(blockpos1);
-            if (!net.minecraftforge.client.ForgeHooksClient.onDrawHighlight((LevelRenderer)(Object)this, camera, hitresult, partialTicks, poseStack, bufferSource))
+            if (!net.neoforged.client.ForgeHooksClient.onDrawHighlight((LevelRenderer)(Object)this, camera, hitresult, partialTicks, poseStack, bufferSource))
                 if (!blockstate.isAir() && this.level.getWorldBorder().isWithinBounds(blockpos1)) {
                     VertexConsumer vertexconsumer2 = bufferSource.getBuffer(RenderType.lines());
                     this.renderHitOutline(poseStack, vertexconsumer2, camera.getEntity(), camX, camY, camZ, blockpos1, blockstate);
                 }
         } else if (hitresult != null && hitresult.getType() == HitResult.Type.ENTITY) {
-            net.minecraftforge.client.ForgeHooksClient.onDrawHighlight((LevelRenderer)(Object)this, camera, hitresult, partialTicks, poseStack, bufferSource);
+            net.neoforged.client.ForgeHooksClient.onDrawHighlight((LevelRenderer)(Object)this, camera, hitresult, partialTicks, poseStack, bufferSource);
         }
 
         PoseStack posestack = RenderSystem.getModelViewStack();

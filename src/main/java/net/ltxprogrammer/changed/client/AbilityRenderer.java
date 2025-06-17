@@ -86,11 +86,11 @@ public class AbilityRenderer implements ResourceManagerReloadListener {
     public void render(AbstractAbilityInstance abilityInstance, ItemTransforms.TransformType transformType, boolean leftHand, PoseStack poseStack, MultiBufferSource bufferSource, int packedLight, int packedOverlay, BakedModel model) {
         poseStack.pushPose();
 
-        model = net.minecraftforge.client.ForgeHooksClient.handleCameraTransforms(poseStack, model, transformType, leftHand);
+        model = net.neoforged.client.ForgeHooksClient.handleCameraTransforms(poseStack, model, transformType, leftHand);
         poseStack.translate(-0.5D, -0.5D, -0.5D);
         if (!model.isCustomRenderer()) {
             if (model.isLayered()) {
-                //net.minecraftforge.client.ForgeHooksClient.drawItemLayered(this, model, abilityInstance, poseStack, bufferSource, packedLight, packedOverlay, flag1);
+                //net.neoforged.client.ForgeHooksClient.drawItemLayered(this, model, abilityInstance, poseStack, bufferSource, packedLight, packedOverlay, flag1);
             } else {
                 RenderType rendertype = Sheets.translucentItemSheet();//ItemBlockRenderTypes.getRenderType(abilityInstance, flag1);
                 VertexConsumer buffer = getFoilBufferDirect(bufferSource, rendertype, true, abilityInstance.hasFoil());
@@ -98,7 +98,7 @@ public class AbilityRenderer implements ResourceManagerReloadListener {
                 this.renderModelLists(model, abilityInstance, packedLight, packedOverlay, poseStack, buffer);
             }
         } else {
-            //net.minecraftforge.client.RenderProperties.get(abilityInstance).getItemStackRenderer().renderByItem(abilityInstance, transformType, poseStack, bufferSource, packedLight, packedOverlay);
+            //net.neoforged.client.RenderProperties.get(abilityInstance).getItemStackRenderer().renderByItem(abilityInstance, transformType, poseStack, bufferSource, packedLight, packedOverlay);
         }
 
         poseStack.popPose();

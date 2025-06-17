@@ -17,7 +17,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeType;
-import net.minecraftforge.client.RecipeBookRegistry;
+import net.neoforged.client.RecipeBookRegistry;
 import org.apache.commons.compress.utils.Lists;
 
 import java.util.ArrayList;

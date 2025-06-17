@@ -8,7 +8,7 @@ import it.unimi.dsi.fastutil.Pair;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.util.Mth;
 import net.minecraft.util.StringRepresentable;
-import net.minecraftforge.common.IExtensibleEnum;
+import net.neoforged.neoforge.common.IExtensibleEnum;
 import org.apache.commons.lang3.NotImplementedException;
 
 import java.util.ArrayList;

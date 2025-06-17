@@ -7,7 +7,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.attributes.AttributeMap;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.common.ForgeMod;
+import net.neoforged.neoforge.common.ForgeMod;
 
 public abstract class AbstractSnowLeopard extends ChangedEntity implements GenderedEntity, PowderSnowWalkable {
     public AbstractSnowLeopard(EntityType<? extends AbstractSnowLeopard> p_19870_, Level p_19871_) {

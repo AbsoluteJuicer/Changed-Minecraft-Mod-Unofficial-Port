@@ -13,8 +13,8 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.Property;
-import net.minecraftforge.eventbus.api.Event;
-import net.minecraftforge.registries.ForgeRegistries;
+import net.neoforged.bus.api.Event;
+import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -27,7 +27,7 @@ import static net.ltxprogrammer.changed.block.AbstractLatexBlock.COVERED;
  */
 public abstract class LatexCoveredBlocks {
     public static class GatherNonCoverableBlocksEvent extends Event {
-        private static RegistryElementPredicate<Block> r(String s) { return RegistryElementPredicate.parseString(ForgeRegistries.BLOCKS, s); }
+        private static RegistryElementPredicate<Block> r(String s) { return RegistryElementPredicate.parseString(NeoForgeRegistries.BLOCKS, s); }
         private static final Set<RegistryElementPredicate<Block>> FIXED_BLOCKS = Set.of(
                 r("bedrock"),
                 r("integrateddynamics:cable"),
@@ -54,19 +54,19 @@ public abstract class LatexCoveredBlocks {
         }
 
         public void addBlock(Block block) {
-            set.add(RegistryElementPredicate.forID(ForgeRegistries.BLOCKS, block.getRegistryName()));
+            set.add(RegistryElementPredicate.forID(NeoForgeRegistries.BLOCKS, block.getRegistryName()));
         }
 
         public void addBlock(Supplier<? extends Block> block) {
-            set.add(RegistryElementPredicate.forID(ForgeRegistries.BLOCKS, block.get().getRegistryName()));
+            set.add(RegistryElementPredicate.forID(NeoForgeRegistries.BLOCKS, block.get().getRegistryName()));
         }
 
         public void addBlock(ResourceLocation registryName) {
-            set.add(RegistryElementPredicate.forID(ForgeRegistries.BLOCKS, registryName));
+            set.add(RegistryElementPredicate.forID(NeoForgeRegistries.BLOCKS, registryName));
         }
 
         public void addNamespace(String namespace) {
-            set.add(RegistryElementPredicate.forNamespace(ForgeRegistries.BLOCKS, namespace));
+            set.add(RegistryElementPredicate.forNamespace(NeoForgeRegistries.BLOCKS, namespace));
         }
     }
 
@@ -81,7 +81,7 @@ public abstract class LatexCoveredBlocks {
             HashSet<RegistryElementPredicate<Block>> notCoverable = new HashSet<>();
             Changed.postModEvent(new LatexCoveredBlocks.GatherNonCoverableBlocksEvent(notCoverable));
 
-            ForgeRegistries.BLOCKS.forEach(block -> {
+            NeoForgeRegistries.BLOCKS.forEach(block -> {
                 if (!block.getStateDefinition().getProperties().contains(AbstractLatexBlock.COVERED))
                     return;
 

@@ -4,8 +4,8 @@ import net.ltxprogrammer.changed.block.CustomFallable;
 import net.ltxprogrammer.changed.entity.AccessoryEntities;
 import net.ltxprogrammer.changed.network.packet.*;
 import net.minecraft.network.FriendlyByteBuf;
-import net.minecraftforge.network.NetworkEvent;
-import net.minecraftforge.network.simple.SimpleChannel;
+import net.neoforged.neoforge.network.NetworkEvent;
+import net.neoforged.neoforge.network.simple.SimpleChannel;
 
 import java.util.function.BiConsumer;
 import java.util.function.Function;

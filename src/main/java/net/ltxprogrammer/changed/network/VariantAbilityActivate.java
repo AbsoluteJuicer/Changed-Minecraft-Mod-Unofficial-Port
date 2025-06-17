@@ -10,8 +10,8 @@ import net.ltxprogrammer.changed.world.inventory.AbilityRadialMenu;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.SimpleMenuProvider;
 import net.minecraft.world.entity.player.Player;
-import net.minecraftforge.network.NetworkEvent;
-import net.minecraftforge.network.PacketDistributor;
+import net.neoforged.neoforge.network.NetworkEvent;
+import net.neoforged.neoforge.network.PacketDistributor;
 
 import java.util.UUID;
 import java.util.function.Supplier;

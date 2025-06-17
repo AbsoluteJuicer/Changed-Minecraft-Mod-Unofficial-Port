@@ -35,14 +35,14 @@ import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlac
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessor;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessorType;
-import net.minecraftforge.event.entity.living.LivingSpawnEvent;
-import net.minecraftforge.event.world.BiomeLoadingEvent;
-import net.minecraftforge.eventbus.api.Event;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.neoforge.event.entity.living.LivingSpawnEvent;
+import net.neoforged.neoforge.event.world.BiomeLoadingEvent;
+import net.neoforged.bus.api.Event;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.registries.DeferredRegister;
+import net.neoforged.neoforge.registries.NeoForgeRegistries;
+import net.neoforged.neoforge.registries.RegistryObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -54,7 +54,7 @@ import static net.minecraft.data.worldgen.placement.VegetationPlacements.treePla
 
 @Mod.EventBusSubscriber
 public class ChangedFeatures {
-    public static final DeferredRegister<Feature<?>> REGISTRY = DeferredRegister.create(ForgeRegistries.FEATURES, Changed.MODID);
+    public static final DeferredRegister<Feature<?>> REGISTRY = DeferredRegister.create(NeoForgeRegistries.FEATURES, Changed.MODID);
     private static final List<FeatureRegistration> FEATURE_REGISTRATIONS = new ArrayList<>();
     private static final List<TreeRegistration> TREE_REGISTRATIONS = new ArrayList<>();
     public static final RegistryObject<Feature<?>> DARK_LATEX_LAKE = register("dark_latex_lake", DarkLatexLake::feature,
