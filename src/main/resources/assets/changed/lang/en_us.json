@@ -76,7 +76,10 @@
   "subtitles.changed.paralyze3": "Intercom announces",
   "subtitles.changed.blow1": "Player infected",
   "subtitles.changed.vacuum": "Vacuum spins",
+
   "subtitles.changed.exoskeleton_step": "Exoskeleton steps",
+  "subtitles.changed.exoskeleton_chime": "Digital chime",
+  "subtitles.changed.exoskeleton_lock": "Exoskeleton equipped",
 
   "item.changed.benign_pants": "Latex Shorts",
   "item.changed.black_tshirt": "Black T-Shirt",
@@ -748,6 +751,8 @@
   "changed.stasis.modify.arms.tooltip": "Config: Modifies the latex beast's arms",
   "changed.stasis.modify.scale": "Scale: %s",
   "changed.stasis.modify.scale.tooltip": "Config: Modifies the latex beast's scale",
+
+  "changed.accessory.slot_disabled_by": "Slot disabled by:",
 
   "changed.exoskeleton.prompt": "[%s]> %s",
   "changed.exoskeleton.battery_low": "Battery level low",
